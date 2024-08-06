@@ -590,7 +590,7 @@
     
     <div class="row">
 		
-			<iframe src='//player.bilibili.com/player.html?isOutside=true&aid=1256273484&bvid=BV16E4m1R7cf&cid=1634568180&p=1' scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" align="middle"  width="100%"> </iframe>
+			<iframe src='//player.bilibili.com/player.html?isOutside=true&aid=1256273484&bvid=BV16E4m1R7cf&cid=1634568180&p=1' scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" align="middle"  style="height: 400px;" width="100%"> </iframe>
 		
     </div>
 </div>
@@ -1160,6 +1160,14 @@ $(function () {
     
 
     <!-- 鼠标星星特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/star.js"><\/script>');
+            }
+        </script>
     
 
      
