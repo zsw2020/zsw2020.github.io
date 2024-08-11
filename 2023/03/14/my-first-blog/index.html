@@ -413,18 +413,18 @@
 <h2 id="2-安装hexo"><a href="#2-安装hexo" class="headerlink" title="2. 安装hexo"></a>2. 安装hexo</h2><ol>
 <li>在终端中输入指令：npm install -g hexo-cli</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> <span class="token parameter variable">-g</span> hexo-cli<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <ol start="2">
 <li>在自己喜欢的路径创建一个文件夹，在该文件夹中打开git bash。</li>
 <li>初始化hexo，输入以下指令：</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo init<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <ol start="4">
 <li>查看是否能启动成功</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><img src="/image/image-20230314210804199.png" alt="()"></p>
 <ol start="5">
@@ -441,12 +441,14 @@
 <h2 id="4-将ssh添加到github上"><a href="#4-将ssh添加到github上" class="headerlink" title="4. 将ssh添加到github上"></a>4. 将ssh添加到github上</h2><ol>
 <li>打开git bash，输入下面命令</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;用户名&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;用户邮箱&quot;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config <span class="token parameter variable">--global</span> user.name <span class="token string">"用户名"</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> user.email <span class="token string">"用户邮箱"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <ol start="2">
 <li>进行家目录（C:\User\Lenovo）,打开git bash输入下面命令并回车三次</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;邮箱&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">ssh-keygen <span class="token parameter variable">-t</span> rsa <span class="token parameter variable">-C</span> <span class="token string">"邮箱"</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <ol start="3">
 <li>进入到家目录下找到.ssh文件夹，找到文件id_rsa.pub，复制里面的内容</li>
@@ -457,17 +459,26 @@
 <li>进行部署</li>
 </ol>
 <p>在自己创建的文件夹中找到_config.yml文件，进行编辑。修改下面代码</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">自己的github对应的ssh地址</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">deploy</span><span class="token punctuation">:</span>
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> git
+  <span class="token key atrule">repo</span><span class="token punctuation">:</span> 自己的github对应的ssh地址
+  <span class="token key atrule">branch</span><span class="token punctuation">:</span> main
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ol start="6">
 <li>安装deploy-git</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-git <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <ol start="7">
 <li>输入下面命令</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">hexo c   <span class="comment">#清除缓存文件 db.json 和已生成的静态文件 public</span></span><br><span class="line">hexo g       <span class="comment">#生成网站静态文件到默认设置的 public 文件夹(hexo generate 的缩写)</span></span><br><span class="line">hexo d       <span class="comment">#自动生成网站静态文件，并部署到设定的仓库(hexo deploy 的缩写)</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">
+hexo c   <span class="token comment">#清除缓存文件 db.json 和已生成的静态文件 public</span>
+hexo g       <span class="token comment">#生成网站静态文件到默认设置的 public 文件夹(hexo generate 的缩写)</span>
+hexo d       <span class="token comment">#自动生成网站静态文件，并部署到设定的仓库(hexo deploy 的缩写)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>输入命令之后，仓库中会有一些文件生成</p>
 <p><img src="/image/image-20230314212358440.png" alt="()"></p>
